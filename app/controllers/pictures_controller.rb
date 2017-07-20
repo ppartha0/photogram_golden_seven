@@ -1,10 +1,17 @@
 class PicturesController < ApplicationController
     #### Create 
     def new_form
+        
         render("pic_templates/new_form.html.erb")
     end
     
     def create_row
+        p = Photo.new
+        source = params["user_img_url"]
+        caption = params["user_caption"]
+        p.source = source
+        p.caption = caption
+        p.save
         render("pic_templates/create_row.html.erb")
     end
     
