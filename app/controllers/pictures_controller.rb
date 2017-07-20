@@ -10,10 +10,18 @@ class PicturesController < ApplicationController
     
     #### Read
     def index
+        
         render("pic_templates/index.html.erb")
     end
     
     def show
+        photo_id = params["the_id"].to_i
+        
+        pic = Photo.find(photo_id)
+        
+        @the_source = pic.source
+        @the_caption = pic.caption
+        
         render("pic_templates/show.html.erb")
     end
     
@@ -23,6 +31,12 @@ class PicturesController < ApplicationController
     end
     
     def update_row
+        render("pic_templates/update_row.html.erb")
+    end
+    
+    #### Delete
+    def destroy_row
+        render("pic_templates/destroy_row.html.erb")
     end
     
 end
