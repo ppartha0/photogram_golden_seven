@@ -10,6 +10,7 @@ class PicturesController < ApplicationController
     
     #### Read
     def index
+        @p = Photo.all
         
         render("pic_templates/index.html.erb")
     end

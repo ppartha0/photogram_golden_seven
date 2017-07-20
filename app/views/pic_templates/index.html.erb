@@ -1,1 +1,9 @@
-<h1>Hi</h1>
+<h1>Photogram</h1>
+
+<ul>
+    <% @p.each do |dbrow| %>
+    <li><img src="<%= dbrow.source %>" ></li>
+    <li><%= dbrow.caption %></li>
+<% end %>
+%></ul>
+
