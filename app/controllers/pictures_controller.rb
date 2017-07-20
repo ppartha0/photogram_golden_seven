@@ -12,6 +12,7 @@ class PicturesController < ApplicationController
         p.source = source
         p.caption = caption
         p.save
+        @photo_count = Photo.count
         render("pic_templates/create_row.html.erb")
     end
     
@@ -35,10 +36,20 @@ class PicturesController < ApplicationController
     
     #### Update
     def edit_form
+        @photo_number = params["an_id"].to_i
+        p = Photo.find(@photo_number)
+        @photo_source = p.source
+        @photo_caption = p.caption
         render("pic_templates/edit_form.html.erb")
     end
     
     def update_row
+        @photo_number = params["some_id"].to_i
+        p = Photo.find(@photo_number)
+        p.source = params["the_source"]
+        p.caption = params["the_caption"]
+        p.save
+        
         render("pic_templates/update_row.html.erb")
     end
     
