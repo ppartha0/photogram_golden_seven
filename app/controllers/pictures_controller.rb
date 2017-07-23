@@ -55,6 +55,11 @@ class PicturesController < ApplicationController
     
     #### Delete
     def destroy_row
+        @photo_number = params["toast_id"].to_i
+        p = Photo.find(@photo_number)
+        p.destroy
+        p.save
+        @photo_count = Photo.count
         render("pic_templates/destroy_row.html.erb")
     end
     
