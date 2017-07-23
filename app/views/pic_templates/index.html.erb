@@ -1,9 +1,47 @@
-<h1>Photogram</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Target Photogram Golden Seven</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" media="all" href="/assets/application-1c79c29286204cfec74780022d0186e27fc9f09c8b5ae96d566e54dca4b9ce48.css" />
+    <script src="/assets/application-a1b05e0595224c422d49fd5ef6dd6cb8f9655f710b432bb9b8a6af9638eca09a.js"></script>
+  </head>
 
-<ul>
+<body>
+<div class="container">
+  <div class="col-md-6">
+    <h1>All Photos</h1>
+
+
+    <a href="/photos/new">
+      Add a new photo
+    </a>
+
+
     <% @p.each do |dbrow| %>
-    <li><img src="<%= dbrow.source %>" ></li>
-    <li><%= dbrow.caption %></li>
-<% end %>
-</ul>
+        <div class="thumbnail">
+            <img src="<%= dbrow.source %>" >
+            <div class="caption">
+              <a href="/photos/<%= dbrow.id %>" class="btn btn-default btn-block">
+                Show Details
+              </a>
+
+              <a href="/photos/<%= dbrow.id %>/edit" class="btn btn-default btn-block">
+                Edit
+              </a>
+
+              <a href="/delete_photo/<%= dbrow.id %>" class="btn btn-default btn-block">
+                Delete
+              </a>
+          </div>  
+        
+        </div>
+    <% end %>
+    </div>
+  </div>
+  </body>
+  </html>
+    
+
 
