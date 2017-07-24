@@ -32,7 +32,7 @@ class PicturesController < ApplicationController
         @the_source = pic.source
         @the_caption = pic.caption
         date_created = pic.created_at
-        days_since_creation = date_created - Date.today
+        days_since_creation = date_created 
         @days_old = days_since_creation
         render("pic_templates/show.html.erb")
     end
