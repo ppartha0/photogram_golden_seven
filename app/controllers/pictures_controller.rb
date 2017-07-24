@@ -13,7 +13,8 @@ class PicturesController < ApplicationController
         p.caption = caption
         p.save
         @photo_count = Photo.count
-        render("pic_templates/create_row.html.erb")
+        #render("pic_templates/create_row.html.erb")
+        render_to("/photos")
     end
     
     #### Read
@@ -63,7 +64,8 @@ class PicturesController < ApplicationController
         p.destroy
         p.save
         @photo_count = Photo.count
-        render("pic_templates/destroy_row.html.erb")
+        #render("pic_templates/destroy_row.html.erb")
+        redirect_to("/photos")
     end
     
 end
