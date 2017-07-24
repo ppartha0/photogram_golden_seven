@@ -14,7 +14,7 @@ class PicturesController < ApplicationController
         p.save
         @photo_count = Photo.count
         #render("pic_templates/create_row.html.erb")
-        render_to("/photos")
+        redirect_to("/photos")
     end
     
     #### Read
