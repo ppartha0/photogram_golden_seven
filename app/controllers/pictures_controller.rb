@@ -54,9 +54,9 @@ class PicturesController < ApplicationController
         p.source = params["the_source"]
         p.caption = params["the_caption"]
         p.save
-        
+        redlink = "/photos/" + @photo_number.to_s
         #render("pic_templates/update_row.html.erb")
-        redirect_to("/photos")
+        redirect_to(redlink)
     end
     
     #### Delete
