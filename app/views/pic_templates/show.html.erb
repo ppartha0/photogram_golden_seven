@@ -5,3 +5,20 @@
 <p>
     <%= @the_caption %>
 </p>
+
+<p>
+  <%= @days_old %> days ago
+</p>
+
+<a href="/photos" class="btn btn-default">
+  Go back
+</a>
+
+<a href="/photos/<%= @photo_id %>/edit" class="btn btn-default">
+  Edit
+</a>
+
+<a href="/delete_photo/<%= @photo_id %" class="btn btn-default">
+  Delete
+</a>
+

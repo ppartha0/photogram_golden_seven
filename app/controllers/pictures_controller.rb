@@ -24,13 +24,15 @@ class PicturesController < ApplicationController
     end
     
     def show
-        photo_id = params["the_id"].to_i
+        photo = params["the_id"].to_i
         
-        pic = Photo.find(photo_id)
+        pic = Photo.find(photo)
         
+        @photo_id = pic.id
         @the_source = pic.source
         @the_caption = pic.caption
         
+        @days_old = 1
         render("pic_templates/show.html.erb")
     end
     
