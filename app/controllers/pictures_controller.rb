@@ -44,8 +44,8 @@ class PicturesController < ApplicationController
         p = Photo.find(@photo_number)
         @photo_source = p.source
         @photo_caption = p.caption
-        #render("pic_templates/edit_form.html.erb")
-        redirect_to("/photos")
+        render("pic_templates/edit_form.html.erb")
+        
     end
     
     def update_row
@@ -55,7 +55,8 @@ class PicturesController < ApplicationController
         p.caption = params["the_caption"]
         p.save
         
-        render("pic_templates/update_row.html.erb")
+        #render("pic_templates/update_row.html.erb")
+        redirect_to("/photos")
     end
     
     #### Delete
