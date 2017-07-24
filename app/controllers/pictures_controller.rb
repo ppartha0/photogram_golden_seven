@@ -28,7 +28,7 @@ class PicturesController < ApplicationController
         
         pic = Photo.find(photo)
         
-        @photo_id = pic.id
+        @photo_id = photo
         @the_source = pic.source
         @the_caption = pic.caption
         
